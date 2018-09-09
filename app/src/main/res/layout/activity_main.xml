@@ -1,73 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_margin="8dp"
-    android:padding="8dp"
-    android:background="@color/colorItem"
     tools:context=".view.MainActivity">
 
-    <TextView
-        android:id="@+id/tv_date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:padding="8dp"
-        android:text="Min, 10 Mar 2018"/>
-
-    <RelativeLayout
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_schedule"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="18">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:orientation="horizontal"
-        android:layout_gravity="center_horizontal">
+        android:layout_weight="2"
+        android:padding="4dp"
+        android:background="@color/colorButton">
 
-        <TextView
-            android:id="@+id/tv_team1"
-            android:layout_toLeftOf="@id/tv_score1"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/ln_result_match"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:maxLines="1"
-            android:text="Manchezxvsddfgfster United dfsgsf"/>
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical">
 
-        <TextView
-            android:id="@+id/tv_score1"
-            android:layout_toLeftOf="@id/tv_vs"
-            android:layout_width="wrap_content"
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/ic_result_match"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:textSize="12sp"
+                android:textColor="@color/colorBlack"
+                android:text="Result Match"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ln_next_match"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:text="2"/>
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical">
 
-        <TextView
-            android:id="@+id/tv_vs"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:padding="8dp"
-            android:text="vs"/>
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/ic_next_mach"/>
 
-        <TextView
-            android:id="@+id/tv_score2"
-            android:layout_toRightOf="@id/tv_vs"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:padding="8dp"
-            android:text="1"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:textSize="12sp"
+                android:textColor="@color/colorBlack"
+                android:text="Next Match"/>
 
-        <TextView
-            android:id="@+id/tv_team2"
-            android:layout_toRightOf="@id/tv_score2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:padding="8dp"
-            android:maxLines="1"
-            android:text="Man Ciasdfdsffasdfdsfasdasdty"/>
+        </LinearLayout>
 
-    </RelativeLayout>
+    </LinearLayout>
 
 </LinearLayout>
