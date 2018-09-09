@@ -1,6 +1,7 @@
 package com.gdk.rio.footballschedule.model
 
 import com.google.gson.annotations.SerializedName
+import java.util.*
 
 data class Match (
         @SerializedName("dateEvent")

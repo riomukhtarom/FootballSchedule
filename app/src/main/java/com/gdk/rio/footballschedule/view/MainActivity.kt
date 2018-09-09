@@ -2,25 +2,23 @@ package com.gdk.rio.footballschedule.view
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v4.widget.SwipeRefreshLayout
 import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.util.Log
 import com.gdk.rio.footballschedule.R
 import com.gdk.rio.footballschedule.model.Match
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.toast
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() , MainView {
 
-    private lateinit var recyclerViewListMatch: RecyclerView
     private val matchItems: MutableList<Match> = mutableListOf()
+    private lateinit var swipeRefreshLayout: SwipeRefreshLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         initializeData()
-
-        matchItems.size
 
         rv_schedule.layoutManager = LinearLayoutManager(this)
         Log.e("Main", matchItems.size.toString())
@@ -41,6 +39,17 @@ class MainActivity : AppCompatActivity() {
             matchItems.add(Match(matchDate[index], teamHome[index], teamAway[index], scoreHome[index], scoreAway[index]))
         }
 
-        matchItems.size
+    }
+
+    override fun showLoading() {
+        swipeRefreshLayout.visibility = SwipeRefreshLayout.VISIBLE
+    }
+
+    override fun hideLoading() {
+        swipeRefreshLayout.visibility = SwipeRefreshLayout.INVISIBLE
+    }
+
+    override fun showMatch() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 }
