@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="8dp"
+    tools:context=".view.DetailActivity">
+
+    <TextView
+        android:id="@+id/tv_dateDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Sab, 09 Sep 2018"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/iv_homeImage"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/tv_homeScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="38sp"
+            android:textAlignment="viewEnd"
+            android:layout_toLeftOf="@id/tv_vsDetail"
+            android:text="0"/>
+
+        <TextView
+            android:id="@+id/tv_vsDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:padding="16dp"
+            android:text="vs"/>
+
+        <TextView
+            android:id="@+id/tv_awayScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="38sp"
+            android:textAlignment="viewStart"
+            android:layout_toRightOf="@id/tv_vsDetail"
+            android:text="0"/>
+
+        <ImageView
+            android:id="@+id/iv_awayImage"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/ic_launcher" />
+
+    </RelativeLayout>
+
+</LinearLayout>

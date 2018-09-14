@@ -5,51 +5,70 @@ import android.os.Bundle
 import android.support.v4.widget.SwipeRefreshLayout
 import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
+import android.widget.ProgressBar
 import com.gdk.rio.footballschedule.R
+import com.gdk.rio.footballschedule.api.ApiRepository
+import com.gdk.rio.footballschedule.api.TheSportDBApi
 import com.gdk.rio.footballschedule.model.Match
+import com.gdk.rio.footballschedule.presenter.MainPresenter
+import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_main.*
+import org.jetbrains.anko.colorAttr
+import org.jetbrains.anko.sdk25.coroutines.onClick
+import org.jetbrains.anko.startActivity
+import org.jetbrains.anko.support.v4.onRefresh
 import org.jetbrains.anko.toast
 
 class MainActivity : AppCompatActivity() , MainView {
 
+
     private val matchItems: MutableList<Match> = mutableListOf()
-    private lateinit var swipeRefreshLayout: SwipeRefreshLayout
+    private lateinit var mainAdapter: MainAdapter
+    private lateinit var presenter: MainPresenter
+    private val LAST_EVENT: String = "eventspastleague.php"
+    private val NEXT_EVENT: String = "eventsnextleague.php"
+    private val LEAGUE_ID: String = "4328"
+    val api = ApiRepository()
+    val gson = Gson()
+    private lateinit var event: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        initializeData()
 
+        event = LAST_EVENT
+
+        presenter = MainPresenter(this, api, gson)
+        presenter.getMatchList(event, LEAGUE_ID)
+
+        mainAdapter = MainAdapter(this, matchItems){
+            startActivity<DetailActivity>("date" to "Today")
+        }
         rv_schedule.layoutManager = LinearLayoutManager(this)
-        Log.e("Main", matchItems.size.toString())
-        rv_schedule.adapter = MainAdapter(this, matchItems) {
-            toast("${it.teamHome}")
+        rv_schedule.adapter = mainAdapter
+
+        ln_result_match.onClick {
+            event = LAST_EVENT
+            presenter.getMatchList(event, LEAGUE_ID)
         }
-    }
-
-    private fun initializeData(){
-        val matchDate = resources.getStringArray(R.array.date)
-        val teamHome = resources.getStringArray(R.array.team1)
-        val teamAway = resources.getStringArray(R.array.team2)
-        val scoreHome = resources.getStringArray(R.array.score1)
-        val scoreAway = resources.getStringArray(R.array.score2)
-        matchItems.clear()
-
-        for(index in matchDate.indices){
-            matchItems.add(Match(matchDate[index], teamHome[index], teamAway[index], scoreHome[index], scoreAway[index]))
+        ln_next_match.onClick {
+            event = NEXT_EVENT
+            presenter.getMatchList(event, LEAGUE_ID)
         }
-
     }
 
     override fun showLoading() {
-        swipeRefreshLayout.visibility = SwipeRefreshLayout.VISIBLE
+        progress_bar.visibility = ProgressBar.VISIBLE
     }
 
     override fun hideLoading() {
-        swipeRefreshLayout.visibility = SwipeRefreshLayout.INVISIBLE
+        progress_bar.visibility = ProgressBar.INVISIBLE
     }
 
-    override fun showMatch() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun showMatch(matchList: List<Match>) {
+        matchItems.clear()
+        matchItems.addAll(matchList)
+        mainAdapter.notifyDataSetChanged()
     }
+
 }

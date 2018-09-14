@@ -22,7 +22,7 @@ class MainPresenter (private val view: MainView,
 
             uiThread {
                 view.hideLoading()
-//                view.showMatch(eventData.matchs)
+                view.showMatch(eventData.events)
             }
         }
     }

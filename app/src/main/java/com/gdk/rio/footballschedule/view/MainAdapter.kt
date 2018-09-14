@@ -8,6 +8,9 @@ import android.view.ViewGroup
 import android.widget.TextView
 import com.gdk.rio.footballschedule.R
 import com.gdk.rio.footballschedule.model.Match
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+import java.util.*
 
 class MainAdapter (private val context: Context, private val matchs: List<Match>, private val listener: (Match) -> Unit)
     : RecyclerView.Adapter<MainAdapter.MatchViewHolder>(){
