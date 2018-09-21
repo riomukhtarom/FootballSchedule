@@ -7,10 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.gdk.rio.footballschedule.R
-import com.gdk.rio.footballschedule.model.Match
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
-import java.util.*
+import com.gdk.rio.footballschedule.model.match.Match
 
 class MainAdapter (private val context: Context, private val matchs: List<Match>, private val listener: (Match) -> Unit)
     : RecyclerView.Adapter<MainAdapter.MatchViewHolder>(){
@@ -37,10 +34,10 @@ class MainAdapter (private val context: Context, private val matchs: List<Match>
 
         fun bindMatchItem (matchs: Match, listener: (Match) -> Unit){
             matchDate.text = matchs.matchDate
-            teamHome.text = matchs.teamHome
-            teamAway.text = matchs.teamAway
-            scoreHome.text = matchs.scoreHome
-            scoreAway.text = matchs.scoreAway
+            teamHome.text = matchs.homeTeam
+            teamAway.text = matchs.awayTeam
+            scoreHome.text = matchs.homeScore
+            scoreAway.text = matchs.awayScore
             itemView.setOnClickListener { listener(matchs) }
         }
     }

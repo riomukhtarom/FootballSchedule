@@ -2,7 +2,7 @@ package com.gdk.rio.footballschedule.presenter
 
 import com.gdk.rio.footballschedule.api.ApiRepository
 import com.gdk.rio.footballschedule.api.TheSportDBApi
-import com.gdk.rio.footballschedule.model.MatchResponse
+import com.gdk.rio.footballschedule.model.match.MatchResponse
 import com.gdk.rio.footballschedule.view.MainView
 import com.google.gson.Gson
 import org.jetbrains.anko.doAsync
