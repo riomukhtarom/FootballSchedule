@@ -23,8 +23,8 @@ class MainActivity : AppCompatActivity() , MainView {
     private val LAST_EVENT: String = "eventspastleague.php"
     private val NEXT_EVENT: String = "eventsnextleague.php"
     private val LEAGUE_ID: String = "4328"
-    val api = ApiRepository()
-    val gson = Gson()
+    private val api = ApiRepository()
+    private val gson = Gson()
     private lateinit var event: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() , MainView {
         setContentView(R.layout.activity_main)
 
         event = LAST_EVENT
-        initilize()
+        initialize()
 
         mainAdapter = MainAdapter(this, matchItems){
             startActivity<DetailActivity>("events" to it)
@@ -81,7 +81,7 @@ class MainActivity : AppCompatActivity() , MainView {
         mainAdapter.notifyDataSetChanged()
     }
 
-    fun initilize(){
+    private fun initialize(){
         mainPresenter = MainPresenter(this, api, gson)
         mainPresenter.getMatchList(event, LEAGUE_ID)
 

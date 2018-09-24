@@ -39,32 +39,32 @@ class DetailActivity : AppCompatActivity(), DetailView {
 
     override fun showDetail(homeTeamLogo: List<Team>, awayTeamLogo: List<Team>) {
 
-        tv_dateDetail.setText(events.matchDate)
+        tv_dateDetail.text = events.matchDate
         homeTeamLogo[0].teamLogo
 
         //home
         Picasso.get().load(homeTeamLogo[0].teamLogo).into(iv_homeLogo)
-        tv_homeName.setText(events.homeTeam)
-        tv_homeScore.setText(events.homeScore)
-        tv_homeFormation.setText(events.homeFormation)
-        tv_homeGoals.setText(events.homeGoalDetails)
-        tv_homeShots.setText(events.homeShots)
-        tv_homeGoalKeeper.setText(events.homeGoalKeeper)
-        tv_homeDefense.setText(events.homeDefense)
-        tv_homeMidfield.setText(events.homeMidfield)
-        tv_homeForward.setText(events.homeForward)
+        tv_homeName.text = events.homeTeam
+        tv_homeScore.text = events.homeScore
+        tv_homeFormation.text = events.homeFormation
+        tv_homeGoals.text = events.homeGoalDetails
+        tv_homeShots.text = events.homeShots
+        tv_homeGoalKeeper.text = events.homeGoalKeeper
+        tv_homeDefense.text = events.homeDefense
+        tv_homeMidfield.text = events.homeMidfield
+        tv_homeForward.text = events.homeForward
 
         //away
         Picasso.get().load(awayTeamLogo[0].teamLogo).into(iv_awayLogo)
-        tv_awayName.setText(events.awayTeam)
-        tv_awayScore.setText(events.awayScore)
-        tv_awayFormation.setText(events.awayFormation)
-        tv_awayGoals.setText(events.awayGoalDetails)
-        tv_awayShots.setText(events.awayShots)
-        tv_awayGoalKeeper.setText(events.awayGoalKeeper)
-        tv_awayDefense.setText(events.awayDefense)
-        tv_awayMidfield.setText(events.awayMidfield)
-        tv_awayForward.setText(events.awayForward)
+        tv_awayName.text = events.awayTeam
+        tv_awayScore.text = events.awayScore
+        tv_awayFormation.text = events.awayFormation
+        tv_awayGoals.text = events.awayGoalDetails
+        tv_awayShots.text = events.awayShots
+        tv_awayGoalKeeper.text = events.awayGoalKeeper
+        tv_awayDefense.text = events.awayDefense
+        tv_awayMidfield.text = events.awayMidfield
+        tv_awayForward.text = events.awayForward
     }
 
 }

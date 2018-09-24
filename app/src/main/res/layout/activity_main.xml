@@ -45,6 +45,7 @@
 
             <ImageView
                 android:id="@+id/iv_result_match"
+                android:contentDescription="@string/result_match"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_gravity="center_horizontal"
@@ -57,7 +58,7 @@
                 android:layout_gravity="center_horizontal"
                 android:textSize="12sp"
                 android:textColor="@color/colorBlack"
-                android:text="Result Match"/>
+                android:text="@string/result_match"/>
 
         </LinearLayout>
 
@@ -72,6 +73,7 @@
 
             <ImageView
                 android:id="@+id/iv_next_match"
+                android:contentDescription="@string/next_match"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_gravity="center_horizontal"
@@ -84,7 +86,7 @@
                 android:layout_gravity="center_horizontal"
                 android:textSize="12sp"
                 android:textColor="@color/colorBlack"
-                android:text="Next Match"/>
+                android:text="@string/next_match"/>
 
         </LinearLayout>
 

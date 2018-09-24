@@ -8,7 +8,7 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <ProgressBar
             android:id="@+id/pb_detail"
@@ -39,6 +39,7 @@
 
                 <ImageView
                     android:id="@+id/iv_homeLogo"
+                    android:contentDescription="@string/home_logo"
                     android:layout_width="0dp"
                     android:layout_height="70dp"
                     android:layout_weight="4"/>
@@ -61,7 +62,7 @@
                     android:textAlignment="center"
                     android:textSize="14sp"
                     android:textColor="@color/colorBlack"
-                    android:text="vs"/>
+                    android:text="@string/vs"/>
 
                 <TextView
                     android:id="@+id/tv_awayScore"
@@ -75,6 +76,7 @@
 
                 <ImageView
                     android:id="@+id/iv_awayLogo"
+                    android:contentDescription="@string/away_logo"
                     android:layout_width="0dp"
                     android:layout_height="70dp"
                     android:layout_weight="4"/>
@@ -157,7 +159,7 @@
                 android:textStyle="bold"
                 android:textColor="@color/colorPrimary"
                 android:padding="8dp"
-                android:text="Match Statistic"/>
+                android:text="@string/match_statistic"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -180,7 +182,7 @@
                     android:textAlignment="center"
                     android:textSize="12sp"
                     android:textColor="@color/colorBlack"
-                    android:text="Goals"/>
+                    android:text="@string/goals"/>
 
                 <TextView
                     android:id="@+id/tv_awayGoals"
@@ -214,7 +216,7 @@
                     android:textAlignment="center"
                     android:textSize="12sp"
                     android:textColor="@color/colorBlack"
-                    android:text="Shoots"/>
+                    android:text="@string/shoots"/>
 
                 <TextView
                     android:id="@+id/tv_awayShots"
@@ -240,7 +242,7 @@
                 android:textStyle="bold"
                 android:textColor="@color/colorPrimary"
                 android:padding="8dp"
-                android:text="Lineups"/>
+                android:text="@string/lineups"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -264,7 +266,7 @@
                     android:textAlignment="center"
                     android:textSize="12sp"
                     android:textColor="@color/colorBlack"
-                    android:text="Goal Keeper"/>
+                    android:text="@string/goal_keeper"/>
 
                 <TextView
                     android:id="@+id/tv_awayGoalKeeper"
@@ -298,7 +300,7 @@
                     android:textAlignment="center"
                     android:textSize="12sp"
                     android:textColor="@color/colorBlack"
-                    android:text="Defense"/>
+                    android:text="@string/defense"/>
 
                 <TextView
                     android:id="@+id/tv_awayDefense"
@@ -332,7 +334,7 @@
                     android:textAlignment="center"
                     android:textSize="12sp"
                     android:textColor="@color/colorBlack"
-                    android:text="Midfield"/>
+                    android:text="@string/midfield"/>
 
                 <TextView
                     android:id="@+id/tv_awayMidfield"
@@ -366,7 +368,7 @@
                     android:textAlignment="center"
                     android:textSize="12sp"
                     android:textColor="@color/colorBlack"
-                    android:text="Forward"/>
+                    android:text="@string/forward"/>
 
                 <TextView
                     android:id="@+id/tv_awayForward"
