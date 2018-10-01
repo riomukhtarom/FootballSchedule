@@ -6,6 +6,7 @@
     <!--activity_main-->
     <string name="result_match">Result Match</string>
     <string name="next_match">Next Match</string>
+    <string name="favorite_match">Favorite Match</string>
 
     <!--detail_activity-->
     <string name="vs">vs</string>
@@ -19,4 +20,8 @@
     <string name="forward">Forward</string>
     <string name="home_logo">Home Logo</string>
     <string name="away_logo">Away Logo</string>
+    <string name="favorites">Favorites</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

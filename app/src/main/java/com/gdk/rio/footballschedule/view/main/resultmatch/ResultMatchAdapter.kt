@@ -1,4 +1,4 @@
-package com.gdk.rio.footballschedule.view
+package com.gdk.rio.footballschedule.view.main.resultmatch
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView
@@ -9,8 +9,9 @@ import android.widget.TextView
 import com.gdk.rio.footballschedule.R
 import com.gdk.rio.footballschedule.model.match.Match
 
-class MainAdapter (private val context: Context, private val matchs: List<Match>, private val listener: (Match) -> Unit)
-    : RecyclerView.Adapter<MainAdapter.MatchViewHolder>(){
+class ResultMatchAdapter (private val context: Context, private val matchs: List<Match>, private val listener: (Match) -> Unit)
+    : RecyclerView.Adapter<ResultMatchAdapter.MatchViewHolder>(){
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MatchViewHolder {
         return MatchViewHolder(LayoutInflater.from(context).inflate(R.layout.item_match, parent, false))

@@ -1,8 +1,8 @@
-package com.gdk.rio.footballschedule.view
+package com.gdk.rio.footballschedule.view.main
 
 import com.gdk.rio.footballschedule.model.match.Match
 
-interface MainView {
+interface MatchView {
     fun showLoading()
     fun hideLoading()
     fun showMatch(matchList: List<Match>)

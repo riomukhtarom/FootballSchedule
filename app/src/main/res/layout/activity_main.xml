@@ -1,95 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/colorGray"
-    tools:context=".view.MainActivity">
+    android:orientation="vertical"
+    tools:context=".view.main.MatchActivity">
+
     <FrameLayout
+        android:id="@+id/frame_mainFrame"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="9">
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/rv_schedule"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-        </android.support.v7.widget.RecyclerView>
-
-        <ProgressBar
-            android:id="@+id/pb_main"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center" />
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_above="@id/bottomNavigationMain">
 
     </FrameLayout>
 
-    <LinearLayout
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/bottomNavigationMain"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:orientation="horizontal"
-        android:layout_weight="1"
-        android:padding="4dp"
-        android:background="@color/colorPrimary">
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:itemBackground="@color/colorPrimary"
+        app:itemIconTint="@drawable/navigation_item"
+        app:itemTextColor="@drawable/navigation_item"
+        app:menu="@menu/match_navigation_menu">
 
-        <LinearLayout
-            android:id="@+id/ln_result_match"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_weight="1"
-            android:layout_gravity="center_vertical">
+    </android.support.design.widget.BottomNavigationView>
 
-            <ImageView
-                android:id="@+id/iv_result_match"
-                android:contentDescription="@string/result_match"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_gravity="center_horizontal"
-                android:src="@drawable/ic_result_match"/>
-
-            <TextView
-                android:id="@+id/tv_result_match"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:textSize="12sp"
-                android:textColor="@color/colorBlack"
-                android:text="@string/result_match"/>
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:id="@+id/ln_next_match"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_weight="1"
-            android:layout_gravity="center_vertical">
-
-            <ImageView
-                android:id="@+id/iv_next_match"
-                android:contentDescription="@string/next_match"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_gravity="center_horizontal"
-                android:src="@drawable/ic_next_mach"/>
-
-            <TextView
-                android:id="@+id/tv_next_match"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:textSize="12sp"
-                android:textColor="@color/colorBlack"
-                android:text="@string/next_match"/>
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-</LinearLayout>
+</RelativeLayout>

@@ -4,8 +4,12 @@ import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
-@Parcelize
+
 data class Match (
+
+        @SerializedName("idEvent")
+        var matchId: String? = null,
+
         @SerializedName("dateEvent")
         var matchDate: String? = null,
 
@@ -70,4 +74,4 @@ data class Match (
 
         @SerializedName("strAwayLineupForward")
         var awayForward: String? = null
-) : Parcelable
+)
